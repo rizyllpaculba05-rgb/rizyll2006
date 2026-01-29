@@ -2,71 +2,118 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
 }
 
 body {
-    background: linear-gradient(135deg, #667eea, #764ba2);
     min-height: 100vh;
+    background: linear-gradient(120deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+    background-size: 300% 300%;
+    animation: gradientMove 10s ease infinite;
     padding: 20px;
+    color: #333;
 }
 
-/* Hero Section */
+/* Background animation */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header */
 .hero {
     text-align: center;
-    color: pink;
-    padding: 60px 20px;
+    padding: 70px 20px;
+    color: white;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
+    font-size: 3.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    opacity: 0.9;
+    font-size: 1.3rem;
+    opacity: 0.95;
 }
 
-/* Card Design */
+/* Card Style */
 .card {
-    background: purple;
     max-width: 900px;
-    margin: 20px auto;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    margin: 25px auto;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 40px rgba(0,0,0,0.2);
 }
 
 .card h2 {
     margin-bottom: 15px;
-    color: #5a4fcf;
+    font-size: 1.8rem;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Text */
+.card p {
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+/* List */
+.card ul {
+    list-style: none;
 }
 
 .card ul li {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.card ul li::before {
+    content: "•";
+    color: #764ba2;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -4px;
 }
 
 /* Skills */
 .skills {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
 }
 
 .skills span {
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-    padding: 8px 15px;
-    border-radius: 20px;
+    padding: 10px 18px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
     font-size: 0.9rem;
-    color: #2c2c54;
     font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
 /* Footer */
 footer {
     text-align: center;
-    color: black;
-    margin-top: 40px;
-    opacity: 0.8;
+    margin-top: 50px;
+    color: white;
+    font-size: 0.9rem;
+    opacity: 0.85;
 }
+
+
